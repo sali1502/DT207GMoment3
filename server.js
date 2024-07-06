@@ -20,9 +20,49 @@ mongoose.connect("mongodb://localhost:27017/workexperiences").then(() => {
     console.log("Error connection todatabase: " + error);
 })
 
+// Schema
+const WorkexperienceSchema = new mongoose.Schema({
+    companyname: {
+        type: String,
+        required: true
+    },
+    jobtitle: {
+        type: String,
+        required: true
+    },
+    location: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    }
+});
+
+const Workexperience = mongoose.model("Workexperience", WorkexperienceSchema);
+
 // Routes 
 app.get("/api", async (req, res) => {
-    res.json({message: "Welcome to this API"});
+    res.json({message: "Välkommen till detta API"});
+});
+
+app.get("/workexperiences", async(req, res) => {
+    try {
+        let result = await Workexperience.find({});
+        return res.json(result);
+    } catch {
+        return res.status(500).json(error);
+    }
+});
+
+app.post("/workexperiences", async(req, res) => {
+    try {
+        let result = await Workexperience.create(req.body);
+        return res.json(result);
+    } catch(error) {
+        return res.status(400).json(error);
+    }
 });
 
 // Starta applikationen
