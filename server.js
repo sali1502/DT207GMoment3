@@ -13,6 +13,13 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Anslut till MongoDB
+mongoose.connect("mongodb://localhost:27017/workexperiences").then(() => {
+    console.log("Connected to MongoDB");
+}).catch((error) => {
+    console.log("Error connection todatabase: " + error);
+})
+
 // Routes 
 app.get("/api", async (req, res) => {
     res.json({message: "Welcome to this API"});
