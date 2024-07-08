@@ -15,7 +15,7 @@ Kör installations-skriptet install.js. Installations-skriptet skapar en databas
 </tr>
 <tr>
   <td>workexperiences</td>
-  <td><strong>id</strong>(Number), <strong>companyname</strong>(String), <strong>jobtitle</strong>(String), <strong>location</strong>(String), <strong>startdate</strong>(Date), <strong>enddate</strong>(Date), <strong>description</strong>(String)</td>
+  <td><strong>id</strong>(), <strong>companyname</strong>(String), <strong>jobtitle</strong>(String), <strong>location</strong>(String), <strong>startdate</strong>(Date), <strong>enddate</strong>(Date), <strong>description</strong>(String)</td>
 </tr>
 </table>
 
