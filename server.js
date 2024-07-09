@@ -22,7 +22,6 @@ mongoose.connect("mongodb://localhost:27017/workexperiences").then(() => {
     console.log("Ett fel uppstod vid anslutning till MongoDB: " + error);
 })
 
-
 // Schema
 const WorkexperienceSchema = new mongoose.Schema({
     companyname: {
